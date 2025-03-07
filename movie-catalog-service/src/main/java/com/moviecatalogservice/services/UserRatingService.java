@@ -23,7 +23,7 @@ public class UserRatingService {
     @HystrixCommand(fallbackMethod = "getFallbackUserRatings",
         commandProperties = {
                 // Time to cause timeout
-                @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "2000"),
+                @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "20000"),
                 // N, Hystrix looks at (analyzes) last N requests.
                 @HystrixProperty(name = "circuitBreaker.requestVolumeThreshold", value = "5"),
                 // if >= 50 percent of the last N requests fail, break the circuit

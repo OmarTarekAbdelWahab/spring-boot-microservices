@@ -25,12 +25,9 @@ public class RatingsResource {
 //        List<Rating> ratings = Arrays.asList(
 //                new Rating("550", 4)
 //        );
-        System.out.println("Herererererer");
         List<RatingDB> ratings = ratingService.getRatingsByUserId(Integer.parseInt(userId));
-        UserRating userRating = new UserRating(
+        return new UserRating(
                 ratings.stream().map(RatingDB::toRating).collect(Collectors.toList())
         );
-        System.out.println("userRating.getRatings().get(0).getMovieId() = " + userRating.getRatings().get(0).getMovieId());
-        return userRating;
     }
 }

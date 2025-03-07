@@ -1,8 +1,7 @@
 package com.example.ratingsservice.Entities;
 
 import com.example.ratingsservice.models.Rating;
-
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "ratings")
